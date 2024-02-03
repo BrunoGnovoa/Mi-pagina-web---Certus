@@ -1,0 +1,126 @@
+body {
+    background-image:url("./src/imágenes/background2.jpg");
+    background-size: cover;
+    background-position: center;   
+    background-repeat: no-repeat
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: rgb(255, 148, 219);
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 10px;
+}
+h1{
+    font-size: 45px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+     }
+
+     a{
+        color: rgb(255, 255, 255);
+     }
+section {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+footer {
+    background-color: #ffbcf4;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: auto;
+    bottom: 0;
+    width: 100%;
+}
+
+.product-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.product {
+    text-align: center;
+    margin: 10px;
+}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+.product img:hover {
+    transform: scale(1.1)
+}
+
+.registration-form {
+    text-align: center;
+}
+.registration-form div{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    align-items: center;
+    font-weight: bold;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    
+}
+
+.registration-form label, .registration-form input, .registration-form button {
+    
+    height: 30px;
+    margin: 10px;
+    text-align: center;
+    padding: 10px;
+}
+
+.profile-management {
+    text-align: center; 
+
+}
+
+.profile-management h2, .profile-management p {
+    margin: 10px;
+}
+
+.profile-management form {
+    margin-top: 20px;
+
+}
+button { 
+    height: auto;
+    background-color: rgb(0, 184, 138);
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.login {
+    text-align: right;
+    font-size: 18px;
+    padding-right: 10px;
+}
+.login a {
+    color: blue;
+}
+
