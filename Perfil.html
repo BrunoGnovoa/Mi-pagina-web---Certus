@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Gestión de Perfil</title>
+</head>
+<body>
+    <header>
+        <h1>Mi Perfil</h1>
+
+        <nav>
+            <ul>
+                <li><a href="index.html"><strong>Volver al Catálogo</strong></a></li>
+                <li><a href="Registro.html"><strong>Registrate</strong></a></li>
+                <li><a href="Perfil.html"><strong>Mi cuenta</strong></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="profile-management">
+        <h2>¿Olvidaste tu contraseña?</h2>
+        <p>Por favor brindanos tu informacion para recuperar tu contraseña</p>
+        <form action="#">
+        
+        
+            <label for="name"></label>
+            <input type="text" id="name" name="name" required placeholder="Nombre"><br>
+
+            <label for="email"></label>
+            <input type="text" id="email" name="email" required placeholder="correo electrónico">
+        </form>
+
+
+        <h2>Modificar Contraseña</h2>
+        <form>
+            <label for="newPassword">Ingrese su nueva contraseña:</label>
+            <input type="password" id="newPassword" name="newPassword" required placeholder="Nueva contraseña">
+            <br><br>
+            <button type="submit">Cambiar Contraseña</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 The Pink Shop</p>
+        <p> <a href="#">Términos de uso</a>
+            |
+            <a href="#">Política de privacidad web</a>
+            |
+            <a href="#">Política de privacidad de productos</a></p>
+    </footer>
+</body>
+</html>
