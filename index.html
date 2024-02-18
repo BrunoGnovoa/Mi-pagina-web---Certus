@@ -3,88 +3,196 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    
+    
+    
     <title>The Pink Shop</title>
 </head>
 <body>
     <header>
         <h1>Catálogo de Productos</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html"><strong>Catálogo</strong></a></li>
-                <li><a href="Registro.html"><strong>Registrate</strong></a></li>
-                <li><a href="Perfil.html"><strong>Mi cuenta</strong></a></li>
+<!--Navegador top-->
+        <nav class="navbar navbar-expand-lg navbar-light custom-navbar">
+          <a class="navbar-brand" href="#">Menú</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Registro.html">Registrate</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Perfil.html"> Mi cuenta</a>
+              </li>
             </ul>
+            <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+          </div>
         </nav>
-    </header>
+       
+        <!-- Botón para abrir el carrito -->
+        <div>
+          <button class="btn btn-primary fixed-bottom" id="openCartBtn" style="width: 100px; height: 100px; color: black;">
+          <img src="./src/carrito.png" alt="Icono Carrito" width="50" height="50"> <!--icono de carrito--></button>
+        </div>
+    <!-- Ventana emergente del carrito -->
+    
+    <div id="cartModal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" style="color: black;">Carrito de Compras</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Contenido del carrito -->
+                    <ul id="cartList" class="list-group">
+                        <!-- Los productos agregados se mostrarán aquí -->
+                        
+                          
+                      </li>
+                    </ul>
+                    <p style="color: black;">Total: $<span id="cartTotal" style="color: black;">0.00</span></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button class="btn btn-success">Realizar Compra</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <!-- Lista de Productos -->
     <section class="product-list">
-        <div class="product">
+        <!-- Contenido de los productos -->
+    </section>
+        <!--==============================================-->
+        
+    </header>
+    <!--Lista de Productos-->
+    <section class="product-list">
+        <div class="cart-product">
             <img src="./src/Mouse.webp" alt="Producto 1">
             <h2>Mouse Lift</h2>
             <p>Confort prolongado, ideal para manos pequeñas y medianas.</p>
             <p>Precio: S/90.00</p>
-            <button>Añadir al carrito</button>
+            <!--<button class="btn btn-primary" data-toggle="modal" data-target="#addToCartModal">Añadir al carrito</button>-->
+            <button class="btn btn-primary" onclick="addToCart('Mouse Lift', '90.00')" data-toggle="modal" data-target="#addToCartModal">Añadir al carrito</button>
         </div>
 
-        <div class="product">
+        <div class="cart-product">
             <img src="./src/teclado.jpg" alt="Producto 2">
             <h2>Teclado</h2>
             <p>un teclado con cable, compacto, sin sección numérica, diseñado para ofrecer confort con el mullido reposamanos incluido.</p>
             <p>Precio: S/105.00</p>
-            <button>Añadir al carrito</button>
+            <button class="btn btn-primary" onclick="addToCart('Teclado','105.00')"   data-toggle="modal" data-target="#addToCartModal">Añadir al carrito</button>
         </div>
         
-        <div class="product">
+        <div class="cart-product">
             <img src="src/audifonos.webp" alt="Producto 3">
             <h2>Audífonos</h2>
             <p>Con audio digital mejorado y controles integrados en el cable. </p>
             <p>Precio: S/200.00</p>
-            <button>Añadir al carrito</button>
+            <button class="btn btn-primary" onclick="addToCart('Audifonos','200.00')" data-toggle="modal" data-target="#addToCartModal">Añadir al carrito</button>
 
         </div>
 
-        <div class="product">
+        <div class="cart-product">
             <img src="./src/camara.jpg" alt="Producto 4">
             <h2>Cámara Brio 100</h2>
             <p>Cámara web Full HD 1080p con equilibrio de iluminación automático, tapa de privacidad integrada y micrófono integrado.</p>
             <p>Precio: S/235.00</p>
-            <button>Añadir al carrito</button>
+            <button class="btn btn-primary" onclick="addToCart('Cámara Brío 100','235.00')" data-toggle="modal" data-target="#addToCartModal">Añadir al carrito</button>
         </div>
         
-        <div class="product">
+        <div class="cart-product">
             <img src="./src/Funda.jpg" alt="Producto 5">
             <h2>Floio Touch</h2>
             <p>Funda con teclado retroiluminado con trackpad para iPad Pro de 11 pulgadas </p>
             <p>Precio: S/85.00</p>
-            <button>Añadir al carrito</button>
+            <button class="btn btn-primary" onclick="addToCart('Floio Touch', '85.00')" data-toggle="modal" data-target="#addToCartModal">Añadir al carrito</button>
         </div>
         
-        <div class="product">
+        <div class="cart-product">
             <img src="./src/Mousepad.jpg" alt="Producto 6">
             <h2>Mouse-pad Studio Series</h2>
             <p>Ésta es la suave alfombrilla de mouse antideslizante que mejora tu espacio de trabajo. Hecha con materiales de alta calidad.</p>
             <p>Precio: S/60.00</p>
-            <button>Añadir al carrito</button>
+            <button class="btn btn-primary" onclick="addToCart('Mouse-pad Studio Series','60.00')" data-toggle="modal" data-target="#addToCartModal">Añadir al carrito</button>
         </div>
         
-        <div class="product">
+        <div class="cart-product">
             <img src="./src/teclas.jpg" alt="Producto 7">
             <h2>Teclas(Keycaps)</h2>
             <p>87 teclas para el teclado inalámbrico G715 sin sección numérica para juegos y el teclado G713 para juegos de The Aurora Collection.</p>
             <p>Precio: S/100.00</p>
-            <button>Añadir al carrito</button>
-        </div>
-    
-    </section>
+            <button class="btn btn-primary" onclick="addToCart('Teclas(Keycaps)', '100.00')" data-toggle="modal" data-target="#addToCartModal">Añadir al carrito</button>
+        </div>                                                                      
+        <!-- 
+            carrito
+        -->
+
+      
+</section>
+
 
     <footer>
         <p>&copy; 2024 The Pink Shop</p>
-        <p> <a href="#">Términos de uso</a>
+        <p> <a href="">Términos de uso</a>
             |
-            <a href="#">Política de privacidad web</a>
+            <a href="">Política de privacidad web</a>
             |
-            <a href="#">Política de privacidad de productos</a></p>
+            <a href="">Política de privacidad de productos</a></p>
     </footer>
+
+    
+
+    <!-- Modal -->
+
+    <div class="modal fade" id="addToCartModal" tabindex="-1" role="dialog" aria-labelledby="addToCartModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="addToCartModalLabel">Añadido al carrito</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              ¡El producto ha sido añadido al carrito!
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Javascript-->
+     <script src="Index.js"></script>
+
+<!--Bootstrap-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+      
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+   
 </body>
 </html>

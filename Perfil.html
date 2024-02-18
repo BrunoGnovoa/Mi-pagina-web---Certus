@@ -22,7 +22,7 @@
     <section class="profile-management">
         <h2>¿Olvidaste tu contraseña?</h2>
         <p>Por favor brindanos tu informacion para recuperar tu contraseña</p>
-        <form action="#">
+        <form action="#" onsubmit="return validatePasswordRecoveryForm()">
         
         
             <label for="name"></label>
@@ -34,7 +34,7 @@
 
 
         <h2>Modificar Contraseña</h2>
-        <form>
+        <form onsubmit="return validatePasswordChangeForm()">
             <label for="newPassword">Ingrese su nueva contraseña:</label>
             <input type="password" id="newPassword" name="newPassword" required placeholder="Nueva contraseña">
             <br><br>
